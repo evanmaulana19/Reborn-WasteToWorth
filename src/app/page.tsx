@@ -74,7 +74,7 @@ export default function Home() {
             <span className="bg-reborn-forest text-reborn-cream p-2 rounded-xl group-hover:scale-105 transition-transform">
               <Leaf className="w-6 h-6 text-reborn-gold" />
             </span>
-            <span className="font-extrabold text-2xl tracking-widest text-reborn-forest font-outfit">REBORN</span>
+            <span className="font-extrabold text-xl xs:text-2xl tracking-widest text-reborn-forest font-outfit">REBORN</span>
           </button>
 
           {/* Desktop Nav */}
@@ -104,10 +104,10 @@ export default function Home() {
               exit={{ opacity: 0, y: -20 }}
               className="absolute top-20 left-0 w-full bg-reborn-cream border-b border-reborn-forest/10 p-6 flex flex-col gap-4 shadow-xl md:hidden"
             >
-              <button onClick={() => scrollToSection("problem")} className="text-left font-semibold py-2 border-b border-reborn-forest/5 hover:text-reborn-teal">Kris TPA</button>
-              <button onClick={() => scrollToSection("solution")} className="text-left font-semibold py-2 border-b border-reborn-forest/5 hover:text-reborn-teal">Inovasi & Produk</button>
-              <button onClick={() => scrollToSection("timeline")} className="text-left font-semibold py-2 border-b border-reborn-forest/5 hover:text-reborn-teal">Proses Produksi</button>
-              <button onClick={() => scrollToSection("purpose")} className="text-left font-semibold py-2 border-b border-reborn-forest/5 hover:text-reborn-teal">Tujuan Mulia & Tim</button>
+              <button onClick={() => scrollToSection("problem")} className="text-left font-semibold py-2 text-sm xs:text-base border-b border-reborn-forest/5 hover:text-reborn-teal">Kris TPA</button>
+              <button onClick={() => scrollToSection("solution")} className="text-left font-semibold py-2 text-sm xs:text-base border-b border-reborn-forest/5 hover:text-reborn-teal">Inovasi & Produk</button>
+              <button onClick={() => scrollToSection("timeline")} className="text-left font-semibold py-2 text-sm xs:text-base border-b border-reborn-forest/5 hover:text-reborn-teal">Proses Produksi</button>
+              <button onClick={() => scrollToSection("purpose")} className="text-left font-semibold py-2 text-sm xs:text-base border-b border-reborn-forest/5 hover:text-reborn-teal">Tujuan Mulia & Tim</button>
 
             </motion.div>
           )}
@@ -127,9 +127,9 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 border border-reborn-forest/15 bg-reborn-forest/5 px-4 py-1.5 rounded-full w-fit text-sm font-semibold"
+              className="inline-flex items-center gap-2 border border-reborn-forest/15 bg-reborn-forest/5 px-3 py-1.5 rounded-full w-fit text-xs xs:text-sm font-semibold"
             >
-              <Sparkles className="w-4 h-4 text-reborn-teal" />
+              <Sparkles className="w-3.5 h-3.5 text-reborn-teal" />
               <span>Bio-Box: 100% Organik & Biodegradable</span>
             </motion.div>
 
@@ -137,7 +137,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-reborn-forest leading-[1.05] font-outfit"
+              className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-outfit font-extrabold tracking-tight text-reborn-forest leading-[1.05]"
             >
               REBORN:<br />
               <span className="text-reborn-teal">Waste to Worth</span>
@@ -147,7 +147,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-lg sm:text-xl text-reborn-forest/80 max-w-xl font-medium"
+              className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-reborn-forest/80 max-w-xl font-medium"
             >
               Kemasan Makanan Organik dan Ekonomis dari Serat Pelepah Pisang & Kulit Jagung.
             </motion.p>
@@ -157,14 +157,14 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="border-2 border-dashed border-reborn-gold bg-reborn-gold/10 p-4 rounded-2xl flex items-center justify-between max-w-md gap-4 shadow-sm"
+              className="border-2 border-dashed border-reborn-gold bg-reborn-gold/10 p-3 xs:p-4 rounded-2xl flex items-center justify-between max-w-md gap-4 shadow-sm"
             >
               <div>
-                <p className="text-xs font-bold tracking-wider text-reborn-forest/60 uppercase">Ekonomis & Ramah Kantong</p>
-                <p className="text-lg sm:text-xl font-black text-reborn-forest mt-0.5">Affordable Eco-Packaging</p>
+                <p className="text-[9px] xs:text-[10px] sm:text-xs font-bold tracking-wider text-reborn-forest/60 uppercase">Ekonomis & Ramah Kantong</p>
+                <p className="text-sm xs:text-base sm:text-lg md:text-xl font-black text-reborn-forest mt-0.5 font-outfit">Affordable Eco-Packaging</p>
               </div>
-              <div className="bg-reborn-gold text-reborn-forest font-bold px-4 py-2 rounded-xl text-sm whitespace-nowrap shadow">
-                mulai dari <span className="text-base font-extrabold">Rp 300</span> / pcs
+              <div className="bg-reborn-gold text-reborn-forest font-bold px-3 py-1.5 xs:px-4 xs:py-2 rounded-xl text-xs xs:text-sm whitespace-nowrap shadow">
+                mulai dari <span className="text-sm xs:text-base font-extrabold">Rp 300</span> / pcs
               </div>
             </motion.div>
 
@@ -177,10 +177,10 @@ export default function Home() {
             >
               <button 
                 onClick={() => scrollToSection("timeline")}
-                className="bg-reborn-gold hover:bg-reborn-gold/90 text-reborn-forest font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 group"
+                className="bg-reborn-gold hover:bg-reborn-gold/90 text-reborn-forest font-bold px-6 py-3 xs:px-8 xs:py-4 rounded-full text-sm xs:text-base shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 group"
               >
                 Lihat Proses Produksi
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 xs:w-5 xs:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
 
             </motion.div>
@@ -251,11 +251,11 @@ export default function Home() {
       <section id="problem" className="py-24 bg-reborn-cream border-t border-reborn-forest/5 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-reborn-teal mb-3">Latar Belakang Lingkungan</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-reborn-forest tracking-tight font-outfit">
+            <h2 className="text-[10px] xs:text-xs font-bold uppercase tracking-wider text-reborn-teal mb-3">Latar Belakang Lingkungan</h2>
+            <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-reborn-forest tracking-tight font-outfit">
               Krisis TPA Ciniru & Bahaya Styrofoam
             </h3>
-            <p className="text-lg text-reborn-forest/70 mt-4 font-medium">
+            <p className="text-sm xs:text-base sm:text-lg text-reborn-forest/70 mt-4 font-medium">
               Realita kritis yang melatarbelakangi lahirnya REBORN sebagai solusi alternatif kemasan makanan ramah lingkungan.
             </p>
           </div>
@@ -271,20 +271,20 @@ export default function Home() {
                 <div className="bg-reborn-cream text-reborn-forest p-3 rounded-2xl w-fit mb-6">
                   <Trash2 className="w-8 h-8 text-reborn-teal" />
                 </div>
-                <h4 className="text-2xl font-bold text-reborn-forest font-outfit">Darurat Sampah TPA Ciniru, Kuningan</h4>
-                <p className="text-reborn-forest/70 mt-4 leading-relaxed font-medium">
+                <h4 className="text-lg xs:text-xl sm:text-2xl font-bold text-reborn-forest font-outfit">Darurat Sampah TPA Ciniru, Kuningan</h4>
+                <p className="text-xs xs:text-sm sm:text-base text-reborn-forest/70 mt-4 leading-relaxed font-medium">
                   Tempat Pembuangan Akhir (TPA) Ciniru di Jalaksana, Kuningan telah mengalami **overcapacity** yang parah. Timbunan sampah plastik sekali pakai dan Styrofoam mendominasi, merusak keindahan ekosistem lereng Gunung Ciremai, mencemari air tanah warga sekitar, dan menimbulkan polusi bau yang berkepanjangan bagi UMKM kuliner Kuningan.
                 </p>
               </div>
 
               <div className="mt-8 pt-6 border-t border-reborn-forest/10 flex flex-wrap items-center gap-6">
                 <div>
-                  <span className="text-3xl font-extrabold text-reborn-teal font-outfit">10+ Ton</span>
-                  <p className="text-xs font-bold text-reborn-forest/50 uppercase">Sampah per Hari</p>
+                  <span className="text-2xl xs:text-3xl font-extrabold text-reborn-teal font-outfit">10+ Ton</span>
+                  <p className="text-[10px] xs:text-xs font-bold text-reborn-forest/50 uppercase">Sampah per Hari</p>
                 </div>
                 <div>
-                  <span className="text-3xl font-extrabold text-reborn-teal font-outfit">Overcapacity</span>
-                  <p className="text-xs font-bold text-reborn-forest/50 uppercase">Status Operasional</p>
+                  <span className="text-2xl xs:text-3xl font-extrabold text-reborn-teal font-outfit">Overcapacity</span>
+                  <p className="text-[10px] xs:text-xs font-bold text-reborn-forest/50 uppercase">Status Operasional</p>
                 </div>
               </div>
             </motion.div>
@@ -299,20 +299,20 @@ export default function Home() {
                 <div className="bg-[#FFEFEF] text-[#D32F2F] p-3 rounded-2xl w-fit mb-6">
                   <ShieldAlert className="w-8 h-8" />
                 </div>
-                <h4 className="text-2xl font-bold text-reborn-forest font-outfit">Bahaya Karsinogenik Kemasan Styrofoam</h4>
-                <p className="text-reborn-forest/70 mt-4 leading-relaxed font-medium">
+                <h4 className="text-lg xs:text-xl sm:text-2xl font-bold text-reborn-forest font-outfit">Bahaya Karsinogenik Kemasan Styrofoam</h4>
+                <p className="text-xs xs:text-sm sm:text-base text-reborn-forest/70 mt-4 leading-relaxed font-medium">
                   Styrofoam mengandung zat berbahaya bernama **Styrene** dan **Benzene**. Ketika bersentuhan dengan makanan panas, berminyak, atau berasam tinggi, zat karsinogenik ini mudah bermigrasi ke dalam makanan. Konsumsi jangka panjang memicu kanker, merusak hormon reproduksi, dan memicu kerusakan saraf secara sistemik.
                 </p>
               </div>
 
               <div className="mt-8 pt-6 border-t border-reborn-forest/10 flex flex-wrap items-center gap-6">
                 <div>
-                  <span className="text-3xl font-extrabold text-[#D32F2F] font-outfit">500+ Thn</span>
-                  <p className="text-xs font-bold text-reborn-forest/50 uppercase">Sulit Terurai Alami</p>
+                  <span className="text-2xl xs:text-3xl font-extrabold text-[#D32F2F] font-outfit">500+ Thn</span>
+                  <p className="text-[10px] xs:text-xs font-bold text-reborn-forest/50 uppercase">Sulit Terurai Alami</p>
                 </div>
                 <div>
-                  <span className="text-3xl font-extrabold text-[#D32F2F] font-outfit">Karsinogen</span>
-                  <p className="text-xs font-bold text-reborn-forest/50 uppercase">Kategori Toksisitas</p>
+                  <span className="text-2xl xs:text-3xl font-extrabold text-[#D32F2F] font-outfit">Karsinogen</span>
+                  <p className="text-[10px] xs:text-xs font-bold text-reborn-forest/50 uppercase">Kategori Toksisitas</p>
                 </div>
               </div>
             </motion.div>
@@ -320,18 +320,18 @@ export default function Home() {
 
           {/* Styrofoam vs Bio-Box Interactive Comparison */}
           <div className="mt-16 bg-white rounded-3xl p-6 md:p-10 border border-reborn-forest/5 shadow-xl">
-            <h4 className="text-2xl font-extrabold text-reborn-forest mb-8 text-center font-outfit">Tabel Komparasi Dampak Lingkungan & Kesehatan</h4>
+            <h4 className="text-lg xs:text-xl sm:text-2xl font-extrabold text-reborn-forest mb-8 text-center font-outfit">Tabel Komparasi Dampak Lingkungan & Kesehatan</h4>
             
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-reborn-forest/10 text-sm font-extrabold uppercase text-reborn-forest/60">
+                  <tr className="border-b border-reborn-forest/10 text-xs xs:text-sm font-extrabold uppercase text-reborn-forest/60">
                     <th className="pb-4">Parameter Fitur</th>
                     <th className="pb-4 text-red-600">Styrofoam Konvensional</th>
                     <th className="pb-4 text-reborn-teal">Bio-Box REBORN</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-reborn-forest/5 font-medium text-sm sm:text-base">
+                <tbody className="divide-y divide-reborn-forest/5 font-medium text-xs xs:text-sm sm:text-base">
                   <tr>
                     <td className="py-4 font-bold text-reborn-forest">Bahan Dasar</td>
                     <td className="py-4 text-reborn-forest/70">Minyak bumi sintetis (Polistirena)</td>
@@ -368,11 +368,11 @@ export default function Home() {
       <section id="solution" className="py-24 bg-white border-t border-reborn-forest/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-reborn-teal mb-3">Inovasi Teknologi Material</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-reborn-forest tracking-tight font-outfit">
+            <h2 className="text-[10px] xs:text-xs font-bold uppercase tracking-wider text-reborn-teal mb-3">Inovasi Teknologi Material</h2>
+            <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-reborn-forest tracking-tight font-outfit">
               Komposit Dual-Fiber Alami
             </h3>
-            <p className="text-lg text-reborn-forest/70 mt-4 font-medium">
+            <p className="text-sm xs:text-base sm:text-lg text-reborn-forest/70 mt-4 font-medium">
               Sinergi biomassa pelepah pisang dan kulit jagung dengan lapisan beeswax menciptakan wadah makanan kuat, fungsional, dan bebas kimia berbahaya.
             </p>
           </div>
@@ -381,7 +381,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 bg-reborn-cream rounded-[2.5rem] p-8 md:p-12 border border-reborn-forest/5">
             {/* Selector list */}
             <div className="lg:col-span-5 flex flex-col gap-4">
-              <h4 className="text-xl font-bold tracking-tight mb-2 uppercase text-reborn-forest/60">Klik untuk menjelajah:</h4>
+              <h4 className="text-base xs:text-lg md:text-xl font-bold tracking-tight mb-2 uppercase text-reborn-forest/60">Klik untuk menjelajah:</h4>
               
               <button 
                 onClick={() => setActiveIngredient("pisang")}
@@ -395,8 +395,8 @@ export default function Home() {
                   <Layers className="w-6 h-6" />
                 </div>
                 <div>
-                  <h5 className="font-extrabold text-base">1. Pelepah Pisang</h5>
-                  <p className="text-xs text-reborn-forest/60 mt-1">Kekuatan tarik & tumpuk mekanis</p>
+                  <h5 className="font-extrabold text-sm xs:text-base">1. Pelepah Pisang</h5>
+                  <p className="text-[10px] xs:text-xs text-reborn-forest/60 mt-1">Kekuatan tarik & tumpuk mekanis</p>
                 </div>
               </button>
 
@@ -412,8 +412,8 @@ export default function Home() {
                   <Cpu className="w-6 h-6" />
                 </div>
                 <div>
-                  <h5 className="font-extrabold text-base">2. Kulit Jagung</h5>
-                  <p className="text-xs text-reborn-forest/60 mt-1">Fleksibilitas serat & kerapatan pori</p>
+                  <h5 className="font-extrabold text-sm xs:text-base">2. Kulit Jagung</h5>
+                  <p className="text-[10px] xs:text-xs text-reborn-forest/60 mt-1">Fleksibilitas serat & kerapatan pori</p>
                 </div>
               </button>
 
@@ -429,8 +429,8 @@ export default function Home() {
                   <Droplet className="w-6 h-6" />
                 </div>
                 <div>
-                  <h5 className="font-extrabold text-base">3. Beeswax Coating</h5>
-                  <p className="text-xs text-reborn-forest/60 mt-1">Pelapis alami anti air & minyak</p>
+                  <h5 className="font-extrabold text-sm xs:text-base">3. Beeswax Coating</h5>
+                  <p className="text-[10px] xs:text-xs text-reborn-forest/60 mt-1">Pelapis alami anti air & minyak</p>
                 </div>
               </button>
             </div>
@@ -446,28 +446,28 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   className="flex flex-col gap-5"
                 >
-                  <div className="flex justify-between items-center">
-                    <span className="bg-reborn-gold/25 text-reborn-forest text-xs font-bold px-3 py-1 rounded-full uppercase">
+                  <div className="flex justify-between items-center gap-2">
+                    <span className="bg-reborn-gold/25 text-reborn-forest text-[10px] xs:text-xs font-bold px-3 py-1 rounded-full uppercase">
                       {ingredients[activeIngredient].tag}
                     </span>
-                    <span className="text-reborn-teal font-extrabold text-sm font-outfit">Dual-Fiber Formula</span>
+                    <span className="text-reborn-teal font-extrabold text-xs xs:text-sm font-outfit">Dual-Fiber Formula</span>
                   </div>
 
-                  <h4 className="text-3xl font-extrabold text-reborn-forest font-outfit">
+                  <h4 className="text-xl xs:text-2xl sm:text-3xl font-extrabold text-reborn-forest font-outfit">
                     {ingredients[activeIngredient].title}
                   </h4>
                   
-                  <h5 className="text-reborn-teal font-bold text-base leading-snug">
+                  <h5 className="text-reborn-teal font-bold text-sm xs:text-base leading-snug">
                     {ingredients[activeIngredient].subtitle}
                   </h5>
 
-                  <p className="text-reborn-forest/80 text-sm sm:text-base leading-relaxed font-medium">
+                  <p className="text-reborn-forest/80 text-xs xs:text-sm sm:text-base leading-relaxed font-medium">
                     {ingredients[activeIngredient].description}
                   </p>
 
-                  <div className="bg-reborn-cream/50 border border-reborn-forest/5 p-4 rounded-2xl flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-reborn-teal shrink-0" />
-                    <span className="text-sm font-bold text-reborn-forest">{ingredients[activeIngredient].impact}</span>
+                  <div className="bg-reborn-cream/50 border border-reborn-forest/5 p-3 xs:p-4 rounded-2xl flex items-center gap-3">
+                    <CheckCircle2 className="w-4 h-4 xs:w-5 xs:h-5 text-reborn-teal shrink-0" />
+                    <span className="text-xs xs:text-sm font-bold text-reborn-forest">{ingredients[activeIngredient].impact}</span>
                   </div>
                 </motion.div>
               </AnimatePresence>
@@ -476,7 +476,7 @@ export default function Home() {
 
           {/* Product Variants Showcase */}
           <div className="mt-16">
-            <h4 className="text-2xl sm:text-3xl font-extrabold text-reborn-forest text-center mb-12 font-outfit">Varian Produk Bio-Box</h4>
+            <h4 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-extrabold text-reborn-forest text-center mb-12 font-outfit">Varian Produk Bio-Box</h4>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Product 1: Bento Box */}
@@ -494,12 +494,12 @@ export default function Home() {
                       <span className="text-[9px] font-bold text-reborn-forest/30 uppercase tracking-widest absolute bottom-2">Bento</span>
                     </div>
                   </div>
-                  <h5 className="text-xl font-bold text-reborn-forest font-outfit">Bento Lunch Box</h5>
-                  <p className="text-xs text-reborn-forest/50 mt-1 font-bold">Volume: 800ml | 3 / 4 Sekat</p>
-                  <p className="text-sm text-reborn-forest/70 mt-3 font-medium">Sangat pas untuk paket catering, nasi campur, nasi box UMKM kuliner.</p>
+                  <h5 className="text-lg xs:text-xl font-bold text-reborn-forest font-outfit">Bento Lunch Box</h5>
+                  <p className="text-[10px] xs:text-xs text-reborn-forest/50 mt-1 font-bold">Volume: 800ml | 3 / 4 Sekat</p>
+                  <p className="text-xs xs:text-sm text-reborn-forest/70 mt-3 font-medium">Sangat pas untuk paket catering, nasi campur, nasi box UMKM kuliner.</p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-reborn-forest/10 text-center">
-                  <span className="text-reborn-teal font-extrabold text-lg">Rp 300 <span className="text-xs font-bold text-reborn-forest/60">/pcs</span></span>
+                  <span className="text-reborn-teal font-extrabold text-base xs:text-lg">Rp 300 <span className="text-xs font-bold text-reborn-forest/60">/pcs</span></span>
                 </div>
               </motion.div>
 
@@ -516,12 +516,12 @@ export default function Home() {
                       <span className="text-[9px] font-bold text-reborn-forest/30 uppercase tracking-widest">Bowl</span>
                     </div>
                   </div>
-                  <h5 className="text-xl font-bold text-reborn-forest font-outfit">Bowl Box</h5>
-                  <p className="text-xs text-reborn-forest/50 mt-1 font-bold">Volume: 650ml</p>
-                  <p className="text-sm text-reborn-forest/70 mt-3 font-medium">Ideal untuk kuliner berkuah, rice bowl, mi ramen, soto, bubur ayam.</p>
+                  <h5 className="text-lg xs:text-xl font-bold text-reborn-forest font-outfit">Bowl Box</h5>
+                  <p className="text-[10px] xs:text-xs text-reborn-forest/50 mt-1 font-bold">Volume: 650ml</p>
+                  <p className="text-xs xs:text-sm text-reborn-forest/70 mt-3 font-medium">Ideal untuk kuliner berkuah, rice bowl, mi ramen, soto, bubur ayam.</p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-reborn-forest/10 text-center">
-                  <span className="text-reborn-teal font-extrabold text-lg">Rp 300 <span className="text-xs font-bold text-reborn-forest/60">/pcs</span></span>
+                  <span className="text-reborn-teal font-extrabold text-base xs:text-lg">Rp 300 <span className="text-xs font-bold text-reborn-forest/60">/pcs</span></span>
                 </div>
               </motion.div>
 
@@ -538,12 +538,12 @@ export default function Home() {
                       <span className="text-[9px] font-bold text-reborn-forest/30 uppercase tracking-widest absolute top-1.5">Snack</span>
                     </div>
                   </div>
-                  <h5 className="text-xl font-bold text-reborn-forest font-outfit">Snack Box</h5>
-                  <p className="text-xs text-reborn-forest/50 mt-1 font-bold">Volume: 400ml</p>
-                  <p className="text-sm text-reborn-forest/70 mt-3 font-medium">Paling cocok untuk kue basah, jajanan pasar, gorengan, kue rapat.</p>
+                  <h5 className="text-lg xs:text-xl font-bold text-reborn-forest font-outfit">Snack Box</h5>
+                  <p className="text-[10px] xs:text-xs text-reborn-forest/50 mt-1 font-bold">Volume: 400ml</p>
+                  <p className="text-xs xs:text-sm text-reborn-forest/70 mt-3 font-medium">Paling cocok untuk kue basah, jajanan pasar, gorengan, kue rapat.</p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-reborn-forest/10 text-center">
-                  <span className="text-reborn-teal font-extrabold text-lg">Rp 300 <span className="text-xs font-bold text-reborn-forest/60">/pcs</span></span>
+                  <span className="text-reborn-teal font-extrabold text-base xs:text-lg">Rp 300 <span className="text-xs font-bold text-reborn-forest/60">/pcs</span></span>
                 </div>
               </motion.div>
 
@@ -557,58 +557,58 @@ export default function Home() {
       <section id="timeline" className="py-24 bg-reborn-cream border-t border-reborn-forest/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-reborn-teal mb-3">Langkah Pembuatan</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-reborn-forest tracking-tight font-outfit">
+            <h2 className="text-[10px] xs:text-xs font-bold uppercase tracking-wider text-reborn-teal mb-3">Langkah Pembuatan</h2>
+            <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-reborn-forest tracking-tight font-outfit">
               Proses Produksi Bio-Box
             </h3>
-            <p className="text-lg text-reborn-forest/70 mt-4 font-medium">
+            <p className="text-sm xs:text-base sm:text-lg text-reborn-forest/70 mt-4 font-medium">
               Bagaimana kami mengubah limbah pertanian lokal menjadi produk kemasan bernilai tinggi melalui proses yang higienis dan terstandar.
             </p>
           </div>
 
           {/* Production Timeline */}
           <div className="relative max-w-4xl mx-auto">
-            {/* Center line decoration (Desktop only) */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-reborn-forest/10 -translate-x-1/2 hidden md:block" />
+            {/* Center line decoration (Always visible, shifts to left-6 on mobile, centered on desktop) */}
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-reborn-forest/10 -translate-x-1/2" />
 
             {/* Step 1 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 mb-16 relative">
-              <div className="flex-1 md:text-right flex md:justify-end">
+            <div className="flex flex-row md:flex-row items-start md:items-center relative pl-16 md:pl-0 mb-16">
+              <div className="flex-1 md:text-right flex md:justify-end w-full">
                 <motion.div 
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="bg-white p-6 rounded-3xl border border-reborn-forest/5 shadow-md max-w-md text-left"
+                  className="bg-white p-5 xs:p-6 rounded-3xl border border-reborn-forest/5 shadow-md max-w-md text-left w-full"
                 >
-                  <span className="bg-reborn-teal/10 text-reborn-teal text-xs font-extrabold uppercase px-3 py-1 rounded-full">Langkah 1</span>
-                  <h4 className="text-xl font-bold text-reborn-forest mt-3 font-outfit">Pengumpulan & Sortasi Limbah</h4>
-                  <p className="text-sm text-reborn-forest/70 mt-2 font-medium">
+                  <span className="bg-reborn-teal/10 text-reborn-teal text-[10px] xs:text-xs font-extrabold uppercase px-3 py-1 rounded-full">Langkah 1</span>
+                  <h4 className="text-lg xs:text-xl font-bold text-reborn-forest mt-3 font-outfit">Pengumpulan & Sortasi Limbah</h4>
+                  <p className="text-xs xs:text-sm text-reborn-forest/70 mt-2 font-medium">
                     Kami bekerja sama dengan para petani di wilayah Cilimus & Cigintung untuk mengumpulkan pelepah pisang yang sudah tidak produktif dan kulit jagung sisa panen yang menumpuk.
                   </p>
                 </motion.div>
               </div>
-              <div className="bg-reborn-teal text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 z-10 font-bold border-4 border-reborn-cream shadow">
+              <div className="bg-reborn-teal text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 z-10 font-bold border-4 border-reborn-cream shadow absolute left-0 top-4 xs:top-6 md:relative md:top-auto md:mx-0">
                 <Users className="w-5 h-5" />
               </div>
               <div className="flex-1 hidden md:block" />
             </div>
 
             {/* Step 2 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 mb-16 relative">
+            <div className="flex flex-row md:flex-row items-start md:items-center relative pl-16 md:pl-0 mb-16">
               <div className="flex-1 hidden md:block" />
-              <div className="bg-reborn-teal text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 z-10 font-bold border-4 border-reborn-cream shadow">
+              <div className="bg-reborn-teal text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 z-10 font-bold border-4 border-reborn-cream shadow absolute left-0 top-4 xs:top-6 md:relative md:top-auto md:mx-0">
                 <Flame className="w-5 h-5" />
               </div>
-              <div className="flex-1 flex justify-start">
+              <div className="flex-1 flex justify-start w-full">
                 <motion.div 
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="bg-white p-6 rounded-3xl border border-reborn-forest/5 shadow-md max-w-md text-left"
+                  className="bg-white p-5 xs:p-6 rounded-3xl border border-reborn-forest/5 shadow-md max-w-md text-left w-full"
                 >
-                  <span className="bg-reborn-teal/10 text-reborn-teal text-xs font-extrabold uppercase px-3 py-1 rounded-full">Langkah 2</span>
-                  <h4 className="text-xl font-bold text-reborn-forest mt-3 font-outfit">Perebusan & Sterilisasi Biomassa</h4>
-                  <p className="text-sm text-reborn-forest/70 mt-2 font-medium">
+                  <span className="bg-reborn-teal/10 text-reborn-teal text-[10px] xs:text-xs font-extrabold uppercase px-3 py-1 rounded-full">Langkah 2</span>
+                  <h4 className="text-lg xs:text-xl font-bold text-reborn-forest mt-3 font-outfit">Perebusan & Sterilisasi Biomassa</h4>
+                  <p className="text-xs xs:text-sm text-reborn-forest/70 mt-2 font-medium">
                     Bahan organik yang terkumpul dibersihkan lalu direbus dengan suhu tinggi untuk membunuh bakteri, jamur, serta menghilangkan lignin (zat kayu) agar diperoleh serat selulosa murni yang bersih.
                   </p>
                 </motion.div>
@@ -616,43 +616,43 @@ export default function Home() {
             </div>
 
             {/* Step 3 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 mb-16 relative">
-              <div className="flex-1 md:text-right flex md:justify-end">
+            <div className="flex flex-row md:flex-row items-start md:items-center relative pl-16 md:pl-0 mb-16">
+              <div className="flex-1 md:text-right flex md:justify-end w-full">
                 <motion.div 
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="bg-white p-6 rounded-3xl border border-reborn-forest/5 shadow-md max-w-md text-left"
+                  className="bg-white p-5 xs:p-6 rounded-3xl border border-reborn-forest/5 shadow-md max-w-md text-left w-full"
                 >
-                  <span className="bg-reborn-teal/10 text-reborn-teal text-xs font-extrabold uppercase px-3 py-1 rounded-full">Langkah 3</span>
-                  <h4 className="text-xl font-bold text-reborn-forest mt-3 font-outfit">Pencacahan Pulp (Pulping)</h4>
-                  <p className="text-sm text-reborn-forest/70 mt-2 font-medium">
+                  <span className="bg-reborn-teal/10 text-reborn-teal text-[10px] xs:text-xs font-extrabold uppercase px-3 py-1 rounded-full">Langkah 3</span>
+                  <h4 className="text-lg xs:text-xl font-bold text-reborn-forest mt-3 font-outfit">Pencacahan Pulp (Pulping)</h4>
+                  <p className="text-xs xs:text-sm text-reborn-forest/70 mt-2 font-medium">
                     Serat yang sudah bersih kemudian dihancurkan menggunakan mesin pencacah berat (heavy duty hydrapulper) menjadi bubur serat (pulp) dengan rasio presisi dual-fiber pisang & jagung.
                   </p>
                 </motion.div>
               </div>
-              <div className="bg-reborn-teal text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 z-10 font-bold border-4 border-reborn-cream shadow">
+              <div className="bg-reborn-teal text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 z-10 font-bold border-4 border-reborn-cream shadow absolute left-0 top-4 xs:top-6 md:relative md:top-auto md:mx-0">
                 <Hammer className="w-5 h-5" />
               </div>
               <div className="flex-1 hidden md:block" />
             </div>
 
             {/* Step 4 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 mb-16 relative">
+            <div className="flex flex-row md:flex-row items-start md:items-center relative pl-16 md:pl-0 mb-16">
               <div className="flex-1 hidden md:block" />
-              <div className="bg-reborn-teal text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 z-10 font-bold border-4 border-reborn-cream shadow">
+              <div className="bg-reborn-teal text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 z-10 font-bold border-4 border-reborn-cream shadow absolute left-0 top-4 xs:top-6 md:relative md:top-auto md:mx-0">
                 <Sun className="w-5 h-5" />
               </div>
-              <div className="flex-1 flex justify-start">
+              <div className="flex-1 flex justify-start w-full">
                 <motion.div 
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="bg-white p-6 rounded-3xl border border-reborn-forest/5 shadow-md max-w-md text-left"
+                  className="bg-white p-5 xs:p-6 rounded-3xl border border-reborn-forest/5 shadow-md max-w-md text-left w-full"
                 >
-                  <span className="bg-reborn-teal/10 text-reborn-teal text-xs font-extrabold uppercase px-3 py-1 rounded-full">Langkah 4</span>
-                  <h4 className="text-xl font-bold text-reborn-forest mt-3 font-outfit">Penjemuran Alami (Sinar Matahari)</h4>
-                  <p className="text-sm text-reborn-forest/70 mt-2 font-medium">
+                  <span className="bg-reborn-teal/10 text-reborn-teal text-[10px] xs:text-xs font-extrabold uppercase px-3 py-1 rounded-full">Langkah 4</span>
+                  <h4 className="text-lg xs:text-xl font-bold text-reborn-forest mt-3 font-outfit">Penjemuran Alami (Sinar Matahari)</h4>
+                  <p className="text-xs xs:text-sm text-reborn-forest/70 mt-2 font-medium">
                     Wadah yang telah dicetak setengah kering kemudian dijemur langsung di bawah terik sinar matahari secara alami untuk menguapkan sisa kadar air perlahan, guna menjaga kepadatan pori serat organik.
                   </p>
                 </motion.div>
@@ -660,22 +660,22 @@ export default function Home() {
             </div>
 
             {/* Step 5 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 relative">
-              <div className="flex-1 md:text-right flex md:justify-end">
+            <div className="flex flex-row md:flex-row items-start md:items-center relative pl-16 md:pl-0">
+              <div className="flex-1 md:text-right flex md:justify-end w-full">
                 <motion.div 
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="bg-white p-6 rounded-3xl border border-reborn-forest/5 shadow-md max-w-md text-left"
+                  className="bg-white p-5 xs:p-6 rounded-3xl border border-reborn-forest/5 shadow-md max-w-md text-left w-full"
                 >
-                  <span className="bg-reborn-teal/10 text-reborn-teal text-xs font-extrabold uppercase px-3 py-1 rounded-full">Langkah 5</span>
-                  <h4 className="text-xl font-bold text-reborn-forest mt-3 font-outfit">Pelapisan Emulsi Beeswax</h4>
-                  <p className="text-sm text-reborn-forest/70 mt-2 font-medium">
+                  <span className="bg-reborn-teal/10 text-reborn-teal text-[10px] xs:text-xs font-extrabold uppercase px-3 py-1 rounded-full">Langkah 5</span>
+                  <h4 className="text-lg xs:text-xl font-bold text-reborn-forest mt-3 font-outfit">Pelapisan Emulsi Beeswax</h4>
+                  <p className="text-xs xs:text-sm text-reborn-forest/70 mt-2 font-medium">
                     Tahap akhir, permukaan Bio-Box disemprot dengan emulsi lilin lebah alami (beeswax) yang dipanaskan. Lapisan lilin ini mengering membentuk proteksi food-grade anti bocor air dan minyak.
                   </p>
                 </motion.div>
               </div>
-              <div className="bg-reborn-teal text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 z-10 font-bold border-4 border-reborn-cream shadow">
+              <div className="bg-reborn-teal text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 z-10 font-bold border-4 border-reborn-cream shadow absolute left-0 top-4 xs:top-6 md:relative md:top-auto md:mx-0">
                 <Droplet className="w-5 h-5" />
               </div>
               <div className="flex-1 hidden md:block" />
@@ -689,53 +689,53 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Heading */}
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-reborn-teal mb-3">Visi Mulia & Komunitas</h2>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-reborn-forest tracking-tight font-outfit">
+            <h2 className="text-[10px] xs:text-xs font-bold uppercase tracking-wider text-reborn-teal mb-3">Visi Mulia & Komunitas</h2>
+            <h3 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-reborn-forest tracking-tight font-outfit">
               Tujuan Mulia & Profil Tim REBORN
             </h3>
-            <p className="text-lg text-reborn-forest/70 mt-4 font-medium">
+            <p className="text-sm xs:text-base sm:text-lg text-reborn-forest/70 mt-4 font-medium">
               Kami berkomitmen untuk mengintegrasikan keberlanjutan bumi, kesejahteraan petani lokal, dan sirkular ekonomi terpadu.
             </p>
           </div>
 
           {/* 3 Pillars */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-            <div className="bg-reborn-cream/60 rounded-3xl p-8 border border-reborn-forest/5 text-left">
+            <div className="bg-reborn-cream/60 rounded-3xl p-6 xs:p-8 border border-reborn-forest/5 text-left">
               <div className="bg-reborn-teal text-white p-3 rounded-2xl w-fit mb-6 shadow">
                 <Leaf className="w-6 h-6 text-reborn-gold" />
               </div>
-              <h4 className="text-xl font-bold text-reborn-forest font-outfit">Pillar 1: Planet</h4>
-              <p className="text-sm text-reborn-forest/80 mt-3 font-medium leading-relaxed">
+              <h4 className="text-lg xs:text-xl font-bold text-reborn-forest font-outfit">Pillar 1: Planet</h4>
+              <p className="text-xs xs:text-sm text-reborn-forest/80 mt-3 font-medium leading-relaxed">
                 Mencegah akumulasi sampah plastik sekali pakai dengan memproduksi kemasan yang terurai 100% alami di dalam tanah dalam 60 hari tanpa residu mikroplastik berbahaya.
               </p>
             </div>
 
-            <div className="bg-reborn-cream/60 rounded-3xl p-8 border border-reborn-forest/5 text-left">
+            <div className="bg-reborn-cream/60 rounded-3xl p-6 xs:p-8 border border-reborn-forest/5 text-left">
               <div className="bg-reborn-teal text-white p-3 rounded-2xl w-fit mb-6 shadow">
                 <Users className="w-6 h-6 text-reborn-gold" />
               </div>
-              <h4 className="text-xl font-bold text-reborn-forest font-outfit">Pillar 2: People</h4>
-              <p className="text-sm text-reborn-forest/80 mt-3 font-medium leading-relaxed">
+              <h4 className="text-lg xs:text-xl font-bold text-reborn-forest font-outfit">Pillar 2: People</h4>
+              <p className="text-xs xs:text-sm text-reborn-forest/80 mt-3 font-medium leading-relaxed">
                 Memberdayakan petani di sekitar Kuningan (petani pisang & jagung Cilimus dan Cigintung) dengan membeli limbah tanaman mereka yang awalnya hanya dibakar dan mencemari udara.
               </p>
             </div>
 
-            <div className="bg-reborn-cream/60 rounded-3xl p-8 border border-reborn-forest/5 text-left">
+            <div className="bg-reborn-cream/60 rounded-3xl p-6 xs:p-8 border border-reborn-forest/5 text-left">
               <div className="bg-reborn-teal text-white p-3 rounded-2xl w-fit mb-6 shadow">
                 <TrendingUp className="w-6 h-6 text-reborn-gold" />
               </div>
-              <h4 className="text-xl font-bold text-reborn-forest font-outfit">Pillar 3: Profit</h4>
-              <p className="text-sm text-reborn-forest/80 mt-3 font-medium leading-relaxed">
+              <h4 className="text-lg xs:text-xl font-bold text-reborn-forest font-outfit">Pillar 3: Profit</h4>
+              <p className="text-xs xs:text-sm text-reborn-forest/80 mt-3 font-medium leading-relaxed">
                 Membangun model ekonomi sirkular ramah lingkungan yang menguntungkan bagi UMKM kuliner dengan menyediakan alternatif kemasan modern premium dengan harga kompetitif.
               </p>
             </div>
           </div>
 
           {/* Team Profile */}
-          <div className="bg-reborn-cream rounded-[2.5rem] p-8 md:p-12 border border-reborn-forest/5">
+          <div className="bg-reborn-cream rounded-[2.5rem] p-6 md:p-12 border border-reborn-forest/5">
             <div className="text-center mb-12">
-              <h4 className="text-2xl sm:text-3xl font-extrabold text-reborn-forest font-outfit">Mengenal Tim Kami</h4>
-              <p className="text-sm sm:text-base text-reborn-forest/70 font-semibold mt-1">Divisi Teknik Informatika, Universitas Kuningan</p>
+              <h4 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-extrabold text-reborn-forest font-outfit">Mengenal Tim Kami</h4>
+              <p className="text-[10px] xs:text-xs sm:text-sm md:text-base text-reborn-forest/70 font-semibold mt-1">Divisi Teknik Informatika, Universitas Kuningan</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -748,9 +748,9 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h5 className="font-bold text-lg text-reborn-forest font-outfit">Evan Maulana</h5>
-                <p className="text-xs text-reborn-teal font-extrabold uppercase mt-1">Sistem Operasional</p>
-                <p className="text-xs text-reborn-forest/60 mt-3 font-medium">Merancang alur manajemen pasokan bahan baku & integrasi operasional.</p>
+                <h5 className="font-bold text-base xs:text-lg text-reborn-forest font-outfit">Evan Maulana</h5>
+                <p className="text-[10px] xs:text-xs text-reborn-teal font-extrabold uppercase mt-1">Sistem Operasional</p>
+                <p className="text-[10px] xs:text-xs text-reborn-forest/60 mt-3 font-medium">Merancang alur manajemen pasokan bahan baku & integrasi operasional.</p>
               </div>
 
               {/* Member 2: Muhammad Abi Busyroh */}
@@ -762,9 +762,9 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h5 className="font-bold text-lg text-reborn-forest font-outfit">Muhammad Abi Busyroh</h5>
-                <p className="text-xs text-reborn-teal font-extrabold uppercase mt-1">Produksi</p>
-                <p className="text-xs text-reborn-forest/60 mt-3 font-medium">Mengawasi jalannya mesin sterilisasi, pulping, pencetakan hot press, & coating.</p>
+                <h5 className="font-bold text-base xs:text-lg text-reborn-forest font-outfit">Muhammad Abi Busyroh</h5>
+                <p className="text-[10px] xs:text-xs text-reborn-teal font-extrabold uppercase mt-1">Produksi</p>
+                <p className="text-[10px] xs:text-xs text-reborn-forest/60 mt-3 font-medium">Mengawasi jalannya mesin sterilisasi, pulping, pencetakan hot press, & coating.</p>
               </div>
 
               {/* Member 3: Nayla Nur Alvi */}
@@ -776,9 +776,9 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h5 className="font-bold text-lg text-reborn-forest font-outfit">Nayla Nur Alvi</h5>
-                <p className="text-xs text-reborn-teal font-extrabold uppercase mt-1">Keuangan</p>
-                <p className="text-xs text-reborn-forest/60 mt-3 font-medium">Mengatur anggaran riset formulasi, pembelian bahan, serta struktur harga jual B2B.</p>
+                <h5 className="font-bold text-base xs:text-lg text-reborn-forest font-outfit">Nayla Nur Alvi</h5>
+                <p className="text-[10px] xs:text-xs text-reborn-teal font-extrabold uppercase mt-1">Keuangan</p>
+                <p className="text-[10px] xs:text-xs text-reborn-forest/60 mt-3 font-medium">Mengatur anggaran riset formulasi, pembelian bahan, serta struktur harga jual B2B.</p>
               </div>
 
               {/* Member 4: Romi Ahmad Al-Malik */}
@@ -790,9 +790,9 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h5 className="font-bold text-lg text-reborn-forest font-outfit">Romi Ahmad Al-Malik</h5>
-                <p className="text-xs text-reborn-teal font-extrabold uppercase mt-1">Pemasaran</p>
-                <p className="text-xs text-reborn-forest/60 mt-3 font-medium">Memimpin program akuisisi UMKM, kampanye sadar lingkungan, & kemitraan.</p>
+                <h5 className="font-bold text-base xs:text-lg text-reborn-forest font-outfit">Romi Ahmad Al-Malik</h5>
+                <p className="text-[10px] xs:text-xs text-reborn-teal font-extrabold uppercase mt-1">Pemasaran</p>
+                <p className="text-[10px] xs:text-xs text-reborn-forest/60 mt-3 font-medium">Memimpin program akuisisi UMKM, kampanye sadar lingkungan, & kemitraan.</p>
               </div>
             </div>
           </div>
@@ -809,17 +809,17 @@ export default function Home() {
           <div className="md:col-span-5 flex flex-col gap-4">
             <div className="flex items-center gap-2">
               <Leaf className="w-7 h-7 text-reborn-gold" />
-              <span className="font-extrabold text-2xl tracking-widest text-white font-outfit">REBORN</span>
+              <span className="font-extrabold text-xl xs:text-2xl tracking-widest text-white font-outfit">REBORN</span>
             </div>
-            <p className="text-reborn-cream/70 text-sm max-w-sm font-semibold leading-relaxed">
+            <p className="text-reborn-cream/70 text-xs xs:text-sm max-w-sm font-semibold leading-relaxed">
               Mengubah limbah pertanian lokal Kuningan berupa pelepah pisang dan kulit jagung menjadi Bio-Box kemasan organik pengganti Styrofoam karsinogenik.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="md:col-span-3">
-            <h5 className="font-bold text-sm uppercase tracking-wider text-reborn-gold mb-4 font-outfit">Navigasi Cepat</h5>
-            <ul className="flex flex-col gap-2 text-sm text-reborn-cream/70 font-semibold">
+            <h5 className="font-bold text-xs xs:text-sm uppercase tracking-wider text-reborn-gold mb-4 font-outfit">Navigasi Cepat</h5>
+            <ul className="flex flex-col gap-2 text-xs xs:text-sm text-reborn-cream/70 font-semibold">
               <li><button onClick={() => scrollToSection("home")} className="hover:text-white transition-colors">Hero</button></li>
               <li><button onClick={() => scrollToSection("problem")} className="hover:text-white transition-colors">Kris TPA</button></li>
               <li><button onClick={() => scrollToSection("solution")} className="hover:text-white transition-colors">Inovasi & Produk</button></li>
@@ -829,8 +829,8 @@ export default function Home() {
           </div>
 
           {/* Contact Info */}
-          <div className="md:col-span-4 flex flex-col gap-3 text-sm text-reborn-cream/70 font-semibold">
-            <h5 className="font-bold text-sm uppercase tracking-wider text-reborn-gold mb-2 font-outfit">Hubungi Kami</h5>
+          <div className="md:col-span-4 flex flex-col gap-3 text-xs xs:text-sm text-reborn-cream/70 font-semibold">
+            <h5 className="font-bold text-xs xs:text-sm uppercase tracking-wider text-reborn-gold mb-2 font-outfit">Hubungi Kami</h5>
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-reborn-teal shrink-0" />
               <span>Teknik Informatika, Universitas Kuningan, Jawa Barat</span>
@@ -847,7 +847,7 @@ export default function Home() {
         </div>
 
         {/* Bottom copyright line */}
-        <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-reborn-cream/50 font-bold">
+        <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] xs:text-xs text-reborn-cream/50 font-bold">
           <p>© {new Date().getFullYear()} REBORN Packaging Indonesia. Hak Cipta Dilindungi.</p>
           <p>Dibuat oleh Tim REBORN - Universitas Kuningan.</p>
         </div>
