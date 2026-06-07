@@ -11,6 +11,13 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        reborn: {
+          cream: "#F4EFE6",
+          forest: "#1E2C26",
+          gold: "#D9B472",
+          teal: "#549B85",
+          white: "#FFFFFF",
+        },
       },
     },
   },
