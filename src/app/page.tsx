@@ -16,10 +16,7 @@ import {
   Droplet, 
   Flame, 
   Hammer, 
-  Boxes, 
-  Loader2, 
-  Send, 
-  ChevronRight,
+  Sun, 
   Menu,
   X,
   Phone,
@@ -27,99 +24,12 @@ import {
   MapPin
 } from "lucide-react";
 
-// Types
-interface FormState {
-  businessName: string;
-  ownerName: string;
-  dailyVolume: string;
-  email: string;
-  phone: string;
-}
-
-interface FeedbackState {
-  type: "success" | "error" | null;
-  message: string;
-}
-
 export default function Home() {
   // Navigation Menu Mobile State
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Solution Interactive Active Tab
   const [activeIngredient, setActiveIngredient] = useState<"pisang" | "jagung" | "beeswax">("pisang");
-
-  // B2B Form States
-  const [form, setForm] = useState<FormState>({
-    businessName: "",
-    ownerName: "",
-    dailyVolume: "",
-    email: "",
-    phone: "",
-  });
-  const [loading, setLoading] = useState(false);
-  const [feedback, setFeedback] = useState<FeedbackState>({ type: null, message: "" });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setFeedback({ type: null, message: "" });
-
-    // Client-side validations
-    if (!form.businessName || !form.ownerName || !form.dailyVolume || !form.email || !form.phone) {
-      setFeedback({ type: "error", message: "Semua kolom formulir harus diisi!" });
-      setLoading(false);
-      return;
-    }
-
-    if (parseInt(form.dailyVolume) <= 0) {
-      setFeedback({ type: "error", message: "Kebutuhan box per hari harus lebih dari 0." });
-      setLoading(false);
-      return;
-    }
-
-    try {
-      const response = await fetch("/api/pre-order", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setFeedback({
-          type: "success",
-          message: result.message || "Terima kasih! Pre-order Anda berhasil terdaftar.",
-        });
-        // Clear form
-        setForm({
-          businessName: "",
-          ownerName: "",
-          dailyVolume: "",
-          email: "",
-          phone: "",
-        });
-      } else {
-        setFeedback({
-          type: "error",
-          message: result.error || "Gagal mengirim pre-order. Silakan coba lagi.",
-        });
-      }
-    } catch (error) {
-      console.error("Submit error:", error);
-      setFeedback({
-        type: "error",
-        message: "Terjadi gangguan koneksi server. Silakan coba lagi beberapa saat.",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -173,12 +83,7 @@ export default function Home() {
             <button onClick={() => scrollToSection("solution")} className="hover:text-reborn-teal transition-colors text-sm">Inovasi & Produk</button>
             <button onClick={() => scrollToSection("timeline")} className="hover:text-reborn-teal transition-colors text-sm">Proses Produksi</button>
             <button onClick={() => scrollToSection("purpose")} className="hover:text-reborn-teal transition-colors text-sm">Tujuan Mulia & Tim</button>
-            <button 
-              onClick={() => scrollToSection("pre-order")}
-              className="bg-reborn-forest text-reborn-cream hover:bg-reborn-teal hover:text-white px-6 py-2.5 rounded-full transition-all text-sm shadow-md font-semibold"
-            >
-              Pesan untuk UMKM
-            </button>
+
           </nav>
 
           {/* Mobile Hamburguer */}
@@ -203,12 +108,7 @@ export default function Home() {
               <button onClick={() => scrollToSection("solution")} className="text-left font-semibold py-2 border-b border-reborn-forest/5 hover:text-reborn-teal">Inovasi & Produk</button>
               <button onClick={() => scrollToSection("timeline")} className="text-left font-semibold py-2 border-b border-reborn-forest/5 hover:text-reborn-teal">Proses Produksi</button>
               <button onClick={() => scrollToSection("purpose")} className="text-left font-semibold py-2 border-b border-reborn-forest/5 hover:text-reborn-teal">Tujuan Mulia & Tim</button>
-              <button 
-                onClick={() => scrollToSection("pre-order")}
-                className="bg-reborn-teal text-white text-center py-3 rounded-xl font-semibold hover:bg-reborn-forest transition-all"
-              >
-                Pesan untuk UMKM
-              </button>
+
             </motion.div>
           )}
         </AnimatePresence>
@@ -282,12 +182,7 @@ export default function Home() {
                 Lihat Proses Produksi
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button 
-                onClick={() => scrollToSection("pre-order")}
-                className="bg-reborn-teal hover:bg-reborn-teal/90 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
-              >
-                Pesan untuk UMKM
-              </button>
+
             </motion.div>
           </div>
 
@@ -309,21 +204,14 @@ export default function Home() {
                 <span className="text-xs font-medium text-reborn-forest/50">Model: Bio-Box Bento v1</span>
               </div>
 
-              {/* Styled CSS mockup of the container */}
-              <div className="my-6 flex flex-col items-center">
-                <div className="relative w-64 h-36 bg-gradient-to-br from-[#EAE3D5] to-[#D5CBB9] rounded-2xl shadow-inner border border-[#C5BAA5] transform rotate-3 flex items-center justify-center">
-                  {/* Organic Fibers simulation textures */}
-                  <div className="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#1E2C26_1px,transparent_1px)] [background-size:16px_16px]" />
-                  <div className="absolute inset-x-2 inset-y-1 border border-dashed border-[#B8AC95]/50 rounded-xl" />
-                  
-                  {/* Beeswax coating shiny layer effect */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-reborn-gold/10 to-white/20 rounded-2xl pointer-events-none" />
-
-                  {/* Embossed Logo mockup */}
-                  <div className="flex items-center gap-1.5 opacity-50 select-none">
-                    <Leaf className="w-5 h-5 text-reborn-forest" />
-                    <span className="font-extrabold tracking-widest text-sm text-reborn-forest">REBORN</span>
-                  </div>
+              {/* Real Product Mockup Image */}
+              <div className="my-6 flex flex-col items-center justify-center">
+                <div className="relative w-64 h-36 flex items-center justify-center overflow-hidden rounded-2xl bg-transparent">
+                  <img 
+                    src="/biobox-mockup.png" 
+                    alt="REBORN Bio-Box Mockup" 
+                    className="absolute w-[110%] h-auto max-w-none object-contain filter drop-shadow-lg hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
 
                 {/* Floating Tags */}
@@ -590,7 +478,7 @@ export default function Home() {
           <div className="mt-16">
             <h4 className="text-2xl sm:text-3xl font-extrabold text-reborn-forest text-center mb-12 font-outfit">Varian Produk Bio-Box</h4>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Product 1: Bento Box */}
               <motion.div 
                 whileHover={{ y: -6 }}
@@ -610,11 +498,8 @@ export default function Home() {
                   <p className="text-xs text-reborn-forest/50 mt-1 font-bold">Volume: 800ml | 3 / 4 Sekat</p>
                   <p className="text-sm text-reborn-forest/70 mt-3 font-medium">Sangat pas untuk paket catering, nasi campur, nasi box UMKM kuliner.</p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-reborn-forest/10 flex justify-between items-center">
-                  <span className="text-reborn-teal font-extrabold">Rp 450 <span className="text-[10px] font-bold text-reborn-forest/60">/pcs</span></span>
-                  <button onClick={() => scrollToSection("pre-order")} className="text-xs font-bold text-reborn-forest hover:text-reborn-teal flex items-center gap-1">
-                    Pesan <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
+                <div className="mt-6 pt-4 border-t border-reborn-forest/10 text-center">
+                  <span className="text-reborn-teal font-extrabold text-lg">Rp 300 <span className="text-xs font-bold text-reborn-forest/60">/pcs</span></span>
                 </div>
               </motion.div>
 
@@ -635,11 +520,8 @@ export default function Home() {
                   <p className="text-xs text-reborn-forest/50 mt-1 font-bold">Volume: 650ml</p>
                   <p className="text-sm text-reborn-forest/70 mt-3 font-medium">Ideal untuk kuliner berkuah, rice bowl, mi ramen, soto, bubur ayam.</p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-reborn-forest/10 flex justify-between items-center">
-                  <span className="text-reborn-teal font-extrabold">Rp 380 <span className="text-[10px] font-bold text-reborn-forest/60">/pcs</span></span>
-                  <button onClick={() => scrollToSection("pre-order")} className="text-xs font-bold text-reborn-forest hover:text-reborn-teal flex items-center gap-1">
-                    Pesan <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
+                <div className="mt-6 pt-4 border-t border-reborn-forest/10 text-center">
+                  <span className="text-reborn-teal font-extrabold text-lg">Rp 300 <span className="text-xs font-bold text-reborn-forest/60">/pcs</span></span>
                 </div>
               </motion.div>
 
@@ -660,38 +542,12 @@ export default function Home() {
                   <p className="text-xs text-reborn-forest/50 mt-1 font-bold">Volume: 400ml</p>
                   <p className="text-sm text-reborn-forest/70 mt-3 font-medium">Paling cocok untuk kue basah, jajanan pasar, gorengan, kue rapat.</p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-reborn-forest/10 flex justify-between items-center">
-                  <span className="text-reborn-teal font-extrabold">Rp 300 <span className="text-[10px] font-bold text-reborn-forest/60">/pcs</span></span>
-                  <button onClick={() => scrollToSection("pre-order")} className="text-xs font-bold text-reborn-forest hover:text-reborn-teal flex items-center gap-1">
-                    Pesan <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
+                <div className="mt-6 pt-4 border-t border-reborn-forest/10 text-center">
+                  <span className="text-reborn-teal font-extrabold text-lg">Rp 300 <span className="text-xs font-bold text-reborn-forest/60">/pcs</span></span>
                 </div>
               </motion.div>
 
-              {/* Product 4: Food Tray */}
-              <motion.div 
-                whileHover={{ y: -6 }}
-                className="bg-reborn-cream border border-reborn-forest/5 rounded-3xl p-6 shadow-md flex flex-col justify-between text-left"
-              >
-                <div>
-                  <div className="bg-white aspect-square rounded-2xl w-full flex items-center justify-center mb-6 border border-reborn-forest/5 relative overflow-hidden">
-                    {/* Simulated Food Tray visual */}
-                    <div className="w-3/4 h-1/2 bg-[#EAE3D5] rounded-md border-2 border-[#D5CBB9] relative flex items-center justify-center">
-                      <div className="absolute inset-1.5 border border-dashed border-[#D5CBB9] rounded" />
-                      <span className="text-[9px] font-bold text-reborn-forest/30 uppercase tracking-widest">Tray</span>
-                    </div>
-                  </div>
-                  <h5 className="text-xl font-bold text-reborn-forest font-outfit">Food Tray</h5>
-                  <p className="text-xs text-reborn-forest/50 mt-1 font-bold">Dimensi: 18 x 12 cm</p>
-                  <p className="text-sm text-reborn-forest/70 mt-3 font-medium">Biasa digunakan untuk dine-in event, sayuran supermarket, sate, bakso bakar.</p>
-                </div>
-                <div className="mt-6 pt-4 border-t border-reborn-forest/10 flex justify-between items-center">
-                  <span className="text-reborn-teal font-extrabold">Rp 320 <span className="text-[10px] font-bold text-reborn-forest/60">/pcs</span></span>
-                  <button onClick={() => scrollToSection("pre-order")} className="text-xs font-bold text-reborn-forest hover:text-reborn-teal flex items-center gap-1">
-                    Pesan <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </motion.div>
+
             </div>
           </div>
         </div>
@@ -785,7 +641,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-center gap-8 mb-16 relative">
               <div className="flex-1 hidden md:block" />
               <div className="bg-reborn-teal text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 z-10 font-bold border-4 border-reborn-cream shadow">
-                <Boxes className="w-5 h-5" />
+                <Sun className="w-5 h-5" />
               </div>
               <div className="flex-1 flex justify-start">
                 <motion.div 
@@ -795,9 +651,9 @@ export default function Home() {
                   className="bg-white p-6 rounded-3xl border border-reborn-forest/5 shadow-md max-w-md text-left"
                 >
                   <span className="bg-reborn-teal/10 text-reborn-teal text-xs font-extrabold uppercase px-3 py-1 rounded-full">Langkah 4</span>
-                  <h4 className="text-xl font-bold text-reborn-forest mt-3 font-outfit">Pencetakan Termal (Hot Press)</h4>
+                  <h4 className="text-xl font-bold text-reborn-forest mt-3 font-outfit">Penjemuran Alami (Sinar Matahari)</h4>
                   <p className="text-sm text-reborn-forest/70 mt-2 font-medium">
-                    Bubur kertas dialirkan ke cetakan berlubang halus, lalu ditekan dengan mesin Hot Press bertenaga tinggi dan suhu panas ekstrim untuk mengurangi kadar air hingga kering dan membentuk wadah.
+                    Wadah yang telah dicetak setengah kering kemudian dijemur langsung di bawah terik sinar matahari secara alami untuk menguapkan sisa kadar air perlahan, guna menjaga kepadatan pori serat organik.
                   </p>
                 </motion.div>
               </div>
@@ -885,8 +741,12 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Member 1: Evan Maulana */}
               <div className="bg-white rounded-3xl p-6 border border-reborn-forest/5 shadow-md flex flex-col items-center text-center">
-                <div className="w-24 h-24 bg-reborn-teal/10 rounded-full flex items-center justify-center font-bold text-2xl text-reborn-teal mb-4 font-outfit">
-                  EM
+                <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-reborn-teal/40 shadow-sm">
+                  <img 
+                    src="/evan.jpeg" 
+                    alt="Evan Maulana" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h5 className="font-bold text-lg text-reborn-forest font-outfit">Evan Maulana</h5>
                 <p className="text-xs text-reborn-teal font-extrabold uppercase mt-1">Sistem Operasional</p>
@@ -895,8 +755,12 @@ export default function Home() {
 
               {/* Member 2: Muhammad Abi Busyroh */}
               <div className="bg-white rounded-3xl p-6 border border-reborn-forest/5 shadow-md flex flex-col items-center text-center">
-                <div className="w-24 h-24 bg-reborn-teal/10 rounded-full flex items-center justify-center font-bold text-2xl text-reborn-teal mb-4 font-outfit">
-                  MB
+                <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-reborn-teal/40 shadow-sm">
+                  <img 
+                    src="/abi.jpeg" 
+                    alt="Muhammad Abi Busyroh" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h5 className="font-bold text-lg text-reborn-forest font-outfit">Muhammad Abi Busyroh</h5>
                 <p className="text-xs text-reborn-teal font-extrabold uppercase mt-1">Produksi</p>
@@ -905,8 +769,12 @@ export default function Home() {
 
               {/* Member 3: Nayla Nur Alvi */}
               <div className="bg-white rounded-3xl p-6 border border-reborn-forest/5 shadow-md flex flex-col items-center text-center">
-                <div className="w-24 h-24 bg-reborn-teal/10 rounded-full flex items-center justify-center font-bold text-2xl text-reborn-teal mb-4 font-outfit">
-                  NN
+                <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-reborn-teal/40 shadow-sm">
+                  <img 
+                    src="/nayla.jpeg" 
+                    alt="Nayla Nur Alvi" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h5 className="font-bold text-lg text-reborn-forest font-outfit">Nayla Nur Alvi</h5>
                 <p className="text-xs text-reborn-teal font-extrabold uppercase mt-1">Keuangan</p>
@@ -915,8 +783,12 @@ export default function Home() {
 
               {/* Member 4: Romi Ahmad Al-Malik */}
               <div className="bg-white rounded-3xl p-6 border border-reborn-forest/5 shadow-md flex flex-col items-center text-center">
-                <div className="w-24 h-24 bg-reborn-teal/10 rounded-full flex items-center justify-center font-bold text-2xl text-reborn-teal mb-4 font-outfit">
-                  RA
+                <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-reborn-teal/40 shadow-sm">
+                  <img 
+                    src="/romi.jpeg" 
+                    alt="Romi Ahmad Al-Malik" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h5 className="font-bold text-lg text-reborn-forest font-outfit">Romi Ahmad Al-Malik</h5>
                 <p className="text-xs text-reborn-teal font-extrabold uppercase mt-1">Pemasaran</p>
@@ -927,154 +799,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. B2B PRE-ORDER FORM */}
-      <section id="pre-order" className="py-24 bg-reborn-cream border-t border-reborn-forest/5 relative">
-        <div className="absolute top-1/3 left-10 w-72 h-72 rounded-full bg-reborn-gold/10 blur-3xl -z-10" />
-        <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full bg-reborn-teal/10 blur-3xl -z-10" />
 
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="bg-white rounded-[2.5rem] border border-reborn-forest/5 p-8 md:p-12 shadow-2xl">
-            
-            <div className="text-center max-w-2xl mx-auto mb-10">
-              <h2 className="text-xs font-bold uppercase tracking-wider text-reborn-teal mb-2">Formulir Waitlist B2B</h2>
-              <h3 className="text-3xl font-black text-reborn-forest tracking-tight font-outfit">
-                Gabung Kemitraan Pre-Order UMKM
-              </h3>
-              <p className="text-sm sm:text-base text-reborn-forest/70 mt-3 font-semibold">
-                Dapatkan prioritas pengiriman gelombang pertama dan harga khusus UMKM kuliner lokal dengan mendaftar di bawah ini.
-              </p>
-            </div>
-
-            {/* Submission Status Alert */}
-            <AnimatePresence>
-              {feedback.type && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  className={`p-4 mb-6 rounded-2xl text-sm font-bold flex items-start gap-3 border ${
-                    feedback.type === "success" 
-                      ? "bg-green-50 border-green-200 text-green-800" 
-                      : "bg-red-50 border-red-200 text-red-800"
-                  }`}
-                >
-                  <CheckCircle2 className={`w-5 h-5 shrink-0 ${feedback.type === "success" ? "text-green-600" : "text-red-600"}`} />
-                  <span>{feedback.message}</span>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            <form onSubmit={handleFormSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-              {/* Culinary Business Name */}
-              <div className="flex flex-col gap-2">
-                <label htmlFor="businessName" className="text-xs font-bold text-reborn-forest uppercase tracking-wider">
-                  Nama Usaha Kuliner
-                </label>
-                <input 
-                  type="text" 
-                  id="businessName"
-                  name="businessName"
-                  value={form.businessName}
-                  onChange={handleInputChange}
-                  placeholder="Contoh: Warmindo Ciremai Jaya"
-                  className="bg-reborn-cream/50 text-reborn-forest font-semibold placeholder:text-reborn-forest/40 border border-reborn-forest/10 focus:border-reborn-teal focus:ring-1 focus:ring-reborn-teal rounded-xl px-4 py-3 text-sm transition-all focus:outline-none"
-                  required
-                />
-              </div>
-
-              {/* Owner Name */}
-              <div className="flex flex-col gap-2">
-                <label htmlFor="ownerName" className="text-xs font-bold text-reborn-forest uppercase tracking-wider">
-                  Nama Pemilik
-                </label>
-                <input 
-                  type="text" 
-                  id="ownerName"
-                  name="ownerName"
-                  value={form.ownerName}
-                  onChange={handleInputChange}
-                  placeholder="Contoh: Evan Maulana"
-                  className="bg-reborn-cream/50 text-reborn-forest font-semibold placeholder:text-reborn-forest/40 border border-reborn-forest/10 focus:border-reborn-teal focus:ring-1 focus:ring-reborn-teal rounded-xl px-4 py-3 text-sm transition-all focus:outline-none"
-                  required
-                />
-              </div>
-
-              {/* Daily Volume Needed */}
-              <div className="flex flex-col gap-2">
-                <label htmlFor="dailyVolume" className="text-xs font-bold text-reborn-forest uppercase tracking-wider">
-                  Kebutuhan Box per Hari
-                </label>
-                <input 
-                  type="number" 
-                  id="dailyVolume"
-                  name="dailyVolume"
-                  value={form.dailyVolume}
-                  onChange={handleInputChange}
-                  placeholder="Contoh: 150"
-                  min="1"
-                  className="bg-reborn-cream/50 text-reborn-forest font-semibold placeholder:text-reborn-forest/40 border border-reborn-forest/10 focus:border-reborn-teal focus:ring-1 focus:ring-reborn-teal rounded-xl px-4 py-3 text-sm transition-all focus:outline-none"
-                  required
-                />
-              </div>
-
-              {/* Email */}
-              <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-xs font-bold text-reborn-forest uppercase tracking-wider">
-                  Alamat Email
-                </label>
-                <input 
-                  type="email" 
-                  id="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleInputChange}
-                  placeholder="Contoh: outlet@email.com"
-                  className="bg-reborn-cream/50 text-reborn-forest font-semibold placeholder:text-reborn-forest/40 border border-reborn-forest/10 focus:border-reborn-teal focus:ring-1 focus:ring-reborn-teal rounded-xl px-4 py-3 text-sm transition-all focus:outline-none"
-                  required
-                />
-              </div>
-
-              {/* WhatsApp Number */}
-              <div className="flex flex-col gap-2 md:col-span-2">
-                <label htmlFor="phone" className="text-xs font-bold text-reborn-forest uppercase tracking-wider">
-                  Nomor WhatsApp
-                </label>
-                <input 
-                  type="tel" 
-                  id="phone"
-                  name="phone"
-                  value={form.phone}
-                  onChange={handleInputChange}
-                  placeholder="Contoh: 08123456789"
-                  className="bg-reborn-cream/50 text-reborn-forest font-semibold placeholder:text-reborn-forest/40 border border-reborn-forest/10 focus:border-reborn-teal focus:ring-1 focus:ring-reborn-teal rounded-xl px-4 py-3 text-sm transition-all focus:outline-none"
-                  required
-                />
-              </div>
-
-              {/* Submit Button */}
-              <div className="md:col-span-2 mt-4">
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full bg-reborn-teal hover:bg-reborn-teal/90 text-white font-extrabold py-4 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
-                >
-                  {loading ? (
-                    <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      <span>Mengirim Pendaftaran...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      <span>Kirim Formulir Pre-Order</span>
-                    </>
-                  )}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
 
       {/* 8. FOOTER */}
       <footer className="bg-reborn-forest text-reborn-cream pt-16 pb-8 border-t border-white/5">
